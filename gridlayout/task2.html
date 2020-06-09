@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Session</title>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body style="background: black">
+   <div id="root" ></div>
+   
+   <script type="text/babel" >
+   
+    const Square=()=> {
+      return <span style={{width:"10px",height:"10px",padding:"8px"}}><div  style={{backgroundColor:"black",height:"10px",width:"15px",display:"inline-block"}}>  </div></span>
+    }
+  
+   const list2=["VIDEOS","RAMBLES","PROJECTS","THE OVERFLOW"]
+   const HeaderList = () => (
+  <ul style={{marginLeft:"38px",marginTop:"-58px"}}>
+    {list2.map(item => {
+      return <li  style={{lineHeight:"40px",width:"101px",fontSize:"18px",display:"inline",padding:"5px"}} key={item}>{item}<Square /></li>;
+    })}
+  </ul>
+);
+const  LogoImage =()=> {
+     return  <img src={"p.jpg"} alt="Logo" style={{width:"60px"}} />;
+}
+
+
+   const Header=()=> <div  style={{color:"white",backgroundColor:"red",width:"75%",height:"139px"}}>
+    <LogoImage />
+    <HeaderList />
+   </div>
+   const element=({text})=> <p style={{margin:"0 0 1px",fontSize:"18px"}}>{text}</p>
+   const b=()=> <br></br>
+   
+   const list = ["we are aiming for a certain grade in school and we dont't get it.", 
+   "you want a boyfriend or girlfriend and he/she says no i don't like you in that way.", 
+   " you go through an interview process for a job and you don't get the position",
+   "when you work so hard to get a client and your proposal gets rejected"];
+   
+   const SimpleList = () => (
+  <ul >
+    {list.map(item => {
+      return <li  style={{lineHeight:"40px",fontSize:"18px"}} key={item}>{item}</li>;
+    })}
+  </ul>
+);
+ 
+   const Second=()=> <div style={{background:"white",height:"692px",padding:"40px",marginRight:"75px",marginLeft:"75px",marginTop:"-54px"}} >
+   <h1>Rejection is hard</h1>
+   <hr />
+   <br />
+   <br />
+    {element({text:"FEBRUARY 12,2019"})}
+    <br />
+    {element({text:"We are taught rejection at an early age when we want to do"}) }
+    {element({text:"something or get something and our parents say 'no'."})}
+    {element({text:"Rejection also happens when:"})}
+    <SimpleList />
+    <br />
+    {element({text:"At the root of it all,we ail want something so bad and when life says"})}
+    {element({text:"no,you can't have it,we get mad and either take it out on someone"})}
+    {element({text:"else,something else or worse,ourselves"})}
+    <br />
+    {element({text:"Rejection is part of life and its ok to be rejected"})}
+
+
+ 
+
+        
+
+   
+  
+ 
+
+   
+   
+   
+
+   </div>
+   const  Page =()=> {
+     return  (
+     <div>
+      <Header />
+      <Second />
+      </div>
+     )
+   };
+
+  
+   
+   
+    ReactDOM.render(<Page /> ,document.getElementById("root"));
+   
+
+   </script>
+  </body>
+  </html>
