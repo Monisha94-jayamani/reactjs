@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+      <div id="root"></div>
+
+  <script type="text/babel">
+  const numbers=[<Component id="0" />]
+  const Component=(props)=>{
+    const [number,setNumber]=React.useState(0);
+    const increment=()=> setNumber(number+1);
+    const decrement=()=> getNumber(number-1);
+    return(
+        <div>
+            <h1 id={props.id} style={{color:"red"}}>{number}</h1>
+            <buton onclick={increment} style={{color:"blue"}}>increment</buton>
+            <buton onclick={decrement} style={{color:"blue"}}>decrement</buton>
+        </div>
+
+    );
+  };
+  const FullList=(props)=>{
+        var numbers=props.number;
+        var List=numbers.map((number,index) =>
+        
+          <ListItem key={index} value={number} />
+        );
+        return (
+    <ul style={{listStyleType:"square"}}>
+      {listItems}
+    </ul>
+
+  );
+};
+const  ListItem=(props)=> {
+ 
+ return <li >{props.value}</li>;
+}
+onst a=[0];
+const Add=()=>{
+    a[0]+=1;
+    numbers.push(<Component id={a[0]}/>);
+    console.log(numbers);
+    ReactDOM.render(
+  <ul><FullList numbers={numbers} /><button onClick={Add}  style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></ul>,
+  document.getElementById('root')
+);
+
+    };
+ReactDOM.render(<ul><FullList numbers={numbers} /><button onClick={Add} style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></ul>,document.getElementById('root'));
+  </script>
+  </body>
+  </html>
