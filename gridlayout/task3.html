@@ -26,9 +26,9 @@ const Component=()=>{
           const decrement=()=>setNumber(number-1);
           return (
               <div>
-                <h1 >{number}</h1>
-                <button  onClick={increment}>Increment</button>
-                <button  onClick={decrement}>Decrement</button>
+                <h1 style={{color:"blue"}} >{number}</h1>
+                <button style={{color:"red"}} onClick={increment}>Increment</button>
+                <button style={{color:"red"}} onClick={decrement}>Decrement</button>
               </div>
               
           );
