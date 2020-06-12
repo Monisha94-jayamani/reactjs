@@ -59,14 +59,14 @@ const Add=()=>{
     numbers.push(<Component id={n[0]}/>);
     console.log(numbers);
     ReactDOM.render(
-  <ul><DivList numbers={numbers} /><button onClick={Add}  style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></ul>,
+  <div><DivList numbers={numbers} /><button onClick={Add}  style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></div>,
   document.getElementById('root')
 );
 
     };
 const numbers = [<Component id="0" />];
 ReactDOM.render(
-  <ul><DivList numbers={numbers} /><button onClick={Add} style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></ul>,document.getElementById('root')
+  <div><DivList numbers={numbers} /><button onClick={Add} style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></div>,document.getElementById('root')
 );
 
   </script>
