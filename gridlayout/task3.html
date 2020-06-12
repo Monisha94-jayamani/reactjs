@@ -19,16 +19,16 @@
 
   <script type="text/babel">
   
-const Component=(props)=>{
+const Component=()=>{
           //console.log(props.id);
           const [number,setNumber]=React.useState(0);
           const increment =()=>setNumber(number+1);
           const decrement=()=>setNumber(number-1);
           return (
               <div>
-                <h1 id={props.id}>{number}</h1>
-                <button id={props.id} onClick={increment}>Increment</button>
-                <button id={props.id} onClick={decrement}>Decrement</button>
+                <h1 >{number}</h1>
+                <button  onClick={increment}>Increment</button>
+                <button  onClick={decrement}>Decrement</button>
               </div>
               
           );
@@ -53,10 +53,10 @@ function DivList(props) {
     </ul>
   );
 }
-const n=[0];
+
 const Add=()=>{
-    n[0]+=1;
-    numbers.push(<Component id={n[0]}/>);
+   
+    numbers.push(<Component />);
     console.log(numbers);
     ReactDOM.render(
   <div><DivList numbers={numbers} /><button onClick={Add}  style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></div>,
@@ -64,7 +64,7 @@ const Add=()=>{
 );
 
     };
-const numbers = [<Component id="0" />];
+const numbers = [<Component />];
 ReactDOM.render(
   <div><DivList numbers={numbers} /><button onClick={Add} style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></div>,document.getElementById('root')
 );
