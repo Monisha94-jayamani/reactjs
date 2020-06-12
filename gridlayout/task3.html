@@ -18,49 +18,57 @@
       <div id="root"></div>
 
   <script type="text/babel">
-  const numbers=[<Component id="0" />]
-  const Component=(props)=>{
-    const [number,setNumber]=React.useState(0);
-    const increment=()=> setNumber(number+1);
-    const decrement=()=> getNumber(number-1);
-    return(
-        <div>
-            <h1 id={props.id} style={{color:"red"}}>{number}</h1>
-            <buton onclick={increment} style={{color:"blue"}}>increment</buton>
-            <buton onclick={decrement} style={{color:"blue"}}>decrement</buton>
-        </div>
+  
+const Component=(props)=>{
+          //console.log(props.id);
+          const [number,setNumber]=React.useState(0);
+          const increment =()=>setNumber(number+1);
+          const decrement=()=>setNumber(number-1);
+          return (
+              <div>
+                <h1 id={props.id}>{number}</h1>
+                <button id={props.id} onClick={increment}>Increment</button>
+                <button id={props.id} onClick={decrement}>Decrement</button>
+              </div>
+              
+          );
+      };
 
-    );
-  };
-  const FullList=(props)=>{
-        var numbers=props.number;
-        var List=numbers.map((number,index) =>
-        
-          <ListItem key={index} value={number} />
-        );
-        return (
-    <ul style={{listStyleType:"square"}}>
+
+
+function ListItem(props) {
+ 
+  return <li style={{listStyleType:"none"}}>{props.value}</li>;
+}
+
+function DivList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number,i) =>
+   
+    <ListItem key={i} value={number} />
+  );
+  return (
+    <ul>
       {listItems}
     </ul>
-
   );
-};
-const  ListItem=(props)=> {
- 
- return <li >{props.value}</li>;
 }
-onst a=[0];
+const n=[0];
 const Add=()=>{
-    a[0]+=1;
-    numbers.push(<Component id={a[0]}/>);
+    n[0]+=1;
+    numbers.push(<Component id={n[0]}/>);
     console.log(numbers);
     ReactDOM.render(
-  <ul><FullList numbers={numbers} /><button onClick={Add}  style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></ul>,
+  <ul><DivList numbers={numbers} /><button onClick={Add}  style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></ul>,
   document.getElementById('root')
 );
 
     };
-ReactDOM.render(<ul><FullList numbers={numbers} /><button onClick={Add} style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></ul>,document.getElementById('root'));
+const numbers = [<Component id="0" />];
+ReactDOM.render(
+  <ul><DivList numbers={numbers} /><button onClick={Add} style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></ul>,document.getElementById('root')
+);
+
   </script>
   </body>
-  </html>
+</html>
