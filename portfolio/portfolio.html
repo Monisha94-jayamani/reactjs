@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <style>
+    <style>
+        .column {
+  float: left;
+  width: 25%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column1 {
+  float: left;
+  width: 25%;
+  height: 100%;
+
+}
+
+.column2 {
+  float: left;
+  width: 35%;
+ 
+}
+.content {
+  background-color: white;
+  padding: 10px;
+}
+#i{
+    background-color:steelblue;
+    height:745px;
+}
+#remaining{
+   background-color:skyblue;
+   height:745px;
+}
+  </style>
+  <body>
+    <div id="root">Hello JAVASCRIPT</div>
+
+    <script type="text/babel">
+   const App=()=>{
+     return(
+       <div>
+      <div className="row">
+            <div className="column1">
+                <div className="content" id="i">
+                    <img src="monisha.jpeg"  style={{width: "281px",
+   
+                        height:"354px" }} />
+                        <h3 style={{backgroundColor:"slateblue",width:"250px", fontFamily:"Times New Roman"}}><pre>Monisha J
+Gmail:monijacklein@gmail.com
+cuddalore,Tamilnadu,India.</pre>
+                        </h3>
+                        <p>I am Monisha .i did my computer science engineering in st.annes college of engineering and technology
+ I am interested in programming.My aim is to become a software developer and have to be good in programming skills
+                        </p>
+                        <p>I did my final year project in image processing using chaotic map.I am intersested in learning.My hobbies are solving puzzles and planting trees,and I am good in Mathematics .</p>
+
+                </div>
+                </div>
+                <div className="column2">
+                <div className="content" id="remaining">
+                    <h4> <img src="profileicon.jpg" style={{width:"30px"}} />PROFILE</h4>
+                      <p style={{fontFamily: "Times New Roman"}}>Innovative optimized solution seeker.
+Exited to be at the development phase of my new career as a web developer.
+I am ambitious,adventurous,assiduous,animatedand an  a lliteration advocate.</p>
+                    <h4><img src="skillsicon.png" style={{width:"30px"}} />SKILLS</h4>
+                    <h5>TECHNICAL SKILLS</h5>
+                      <ul>
+                        <li>C</li>
+                        <li>C++</li>
+                        <li>Javascript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Bootstrap</li>
+                      </ul>
+                      <h5><img src="worksopicons.webp" style={{width:"30px"}}/>ADDITIONAL SKILLS</h5>
+                        <ul>
+                          <li>Conducted many events</li>
+                          <li>Conducted national conference </li>
+                        </ul>
+                        <h4>WORKSHOP/Paper Presentation</h4>
+                        <ul>
+                          <li>Attended Python workshop</li>
+                          <li>Attended Java workshop</li>
+                          <li>Attended Cloud computing Workshop</li>
+                          <li>Attend PHP Workshop</li>
+                          </ul>
+                </div>
+                </div>
+
+                <div className="column2">
+                  <div className="content" id="remaining">
+                          <h4><img src="presentationicon.webp" style={{width:"30px"}}/>Paper Presentation</h4>
+                          <ul>
+                            <li>Published International Journal in MMD-S1-SeverModel.</li>
+                            <li>Presented paper on E-learning based on Cloud Computing</li>
+                          </ul>
+                          <h4><img src="coursesicon.webp" style={{width:"30px"}}/>Courses/Internship</h4>
+                          <ul>
+                            <li>Went 3 month Java courses</li>
+                            <li>Went HTML,CSS Internship for 2 month in cloud logistic technology.</li>
+                          </ul>
+                          <h4><img src="officeicon.webp" style={{width:"30px"}}/>Work Experience</h4>
+                          <ul>
+                          <li>As a fresher i didnt have any work experience.</li>
+                          <li>I did Intership alone in cloud Logistic Technology.</li>
+                          </ul>
+                          <h4><img src="referenceicon.jpg" style={{width:"30px"}}/>Reference</h4>
+                            <p>Above all furnised are true and to best of my knowledge.</p>
+                            <ul>
+                             <li style={{listStyleType:"none"}}> Dr.R.Arokiadass,</li>
+                             <li style={{listStyleType:"none"}}> Principal,</li>
+                             <li style={{listStyleType:"none"}}>SACAET,Cuddalore.</li>
+                             
+                             </ul>
+                            <ul>
+                              <li style={{listStyleType:"none"}}> Sr.Punitha Jilt,</li>
+                                <li style={{listStyleType:"none"}}>  Principal,</li>
+                                  <li style={{listStyleType:"none"}}>  SACAET</li>
+                                  <li style={{listStyleType:"none"}}>Cuddalore.</li>
+                            </ul>
+                          </div>
+                          </div>
+
+                          
+        </div>
+        </div>
+     );
+   };
+   ReactDOM.render(<App />,document.getElementById("root"))
+    </script>
+    </body>
+    </html>
