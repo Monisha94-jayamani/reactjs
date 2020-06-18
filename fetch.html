@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Session</title>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+</head>
+<body>
+    <div id="root"></div>
+    <script  >
+   fetch("https://restcountries.eu/rest/v2/all")
+    .then(data=>{
+        
+       data.json().then(function(a){
+         
+           a.map(function myfunc(d){
+          console.log(d.name);
+});
+            
+});
+
+        return fetch("https://restcountries.eu/rest/v2/name/united")
+    })
+    .then(data=>{
+         
+ data.json().then(function(data){
+           console.log("second",data);
+});
+           
+    })
+    .catch(error=>{
+        console.log("error:(")
+    });
+
+    </script>
+</body>
+</html>
