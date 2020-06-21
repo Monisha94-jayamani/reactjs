@@ -46,7 +46,7 @@
             handleClick(i){
                 const squares = this.state.squares.slice();
                 console.log("slice",squares)
-               if (calculateWinner(squares))
+               if (calculateWinner(squares) || squares[i])
                {
                    return;
                }
