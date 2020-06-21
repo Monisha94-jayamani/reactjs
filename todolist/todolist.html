@@ -19,67 +19,60 @@
     <div id="root">Hello JAVASCRIPT</div>
 
     <script type="text/babel">
-        const App=()=>{
-            const [value,setValue]=React.useState("");
-            const [todo,setTodos]=React.useState([]);
-            //console.log(todo)    
-            const adding=(index)=>{
-                return(
-                    
-                    
-                      
-                       setTodos(todo.concat([value])),
-                       setValue("")
-                       
-                       
-                       
-                );
-            };
-            const [background,setbackground]=React.useState("blue");
-            const Changecolor=(index)=>{
-                return(
-               setbackground(background)
-              
-                );
-            };
-      
-            return(
-               
-                <div>
-                <input type="text" value={value} onChange={event=> setValue(event.target.value)} />
-                <button onClick ={adding}>Click me</button>
-                
-                <ul style={{ listStyleType:"none"}}  >
-    {
-        
-         todo.map((todos,index)=>(
-        <li    onMouseEnter={()=>{setbackground("red")}
-          
-            }
-            onClick={(event)=>console.log(index,todo,background)
-            
-            }
-         onMouseOut={()=>setbackground("blue")} 
-        style={{background:background}} key={index} >
-        <input type="radio"  />{todos}<button onClick={() =>
-                    setTodos(todo.filter((count, i) => index !== i))}>&#10006;</button></li>
-                   
-         ))
-         
-    }
-
-    </ul>
-               
-    
-                </div>
-              
-               
-            );
+      const App = () => {
+        const [value, setValue] = React.useState("");
+        const [todo, setTodos] = React.useState([]);
+        //console.log(todo)
+        const adding = (index) => {
+          return setTodos(todo.concat([value])), setValue("");
         };
-        
-          
-                    
-        ReactDOM.render(<App/>,document.getElementById("root"));
+        const [todoindex, settodoindex] = React.useState(null);
+        // const Changecolor=(index)=>{
+        //     return(
+        //    setbackground(background)
+
+        //     );
+        // };
+
+        return (
+          <div>
+            <input
+              type="text"
+              value={value}
+              onChange={(event) => setValue(event.target.value)}
+            />
+            <button onClick={adding}>Click me</button>
+
+            <ul style={{ listStyleType: "none" }}>
+              {todo.map((todos, index) => (
+                <li
+                  onMouseEnter={() => {
+                    settodoindex(index);
+                  }}
+                  // onClick={(event)=>console.log(index,todo,background)
+
+                  // }
+                  onMouseOut={() => settodoindex(null)}
+                  style={{ background: index == todoindex ? "red" : "blue" }}
+                  key={index}
+                >
+                  <input type="radio" />
+                  {todos}
+                  <button
+                    onClick={() =>
+                      setTodos(todo.filter((count, i) => index !== i))
+                    }
+                  >
+                    &#10006;
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
-    </body>
-    </html>
+  </body>
+</html>
