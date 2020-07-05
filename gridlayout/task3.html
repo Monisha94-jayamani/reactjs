@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Count</title>
+    <title>Document</title>
     <script
       crossorigin
       src="https://unpkg.com/react@16/umd/react.development.js"
@@ -14,61 +14,49 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
+  <style></style>
   <body>
-      <div id="root"></div>
-
-  <script type="text/babel">
-  
-const Component=()=>{
-          //console.log(props.id);
-          const [number,setNumber]=React.useState(0);
-          const increment =()=>setNumber(number+1);
-          const decrement=()=>setNumber(number-1);
-          return (
-              <div>
-                <h1 style={{color:"blue"}} >{number}</h1>
-                <button style={{color:"red"}} onClick={increment}>Increment</button>
-                <button style={{color:"red"}} onClick={decrement}>Decrement</button>
-              </div>
-              
-          );
+    <div id="root">Hello JAVASCRIPT</div>
+    <script type="text/babel">
+      const Counter = () => {
+        const [number, setnumber] = React.useState([0, 1, 2, 3, 4]);
+        function increment(i) {
+          setnumber(number.map((ele, index) => (index === i ? ele + 1 : ele)));
+        }
+        function decrement(i) {
+          setnumber(number.map((ele, index) => (index === i ? ele - 1 : ele)));
+        }
+        function remove(i) {
+          setnumber(number.filter((ele, index) => index !== i));
+        }
+        function add() {
+          return setnumber(number.concat([0]));
+        }
+        // const Add = () => {
+        //   return setnumber(number.concat([0]));
+        // };
+        return (
+          <div>
+            {number.map((n, i) => {
+              return (
+                <div key={i}>
+                  <p key={i}>{n}</p>
+                  <button onClick={() => increment(i)}>increment</button>
+                  <button onClick={() => decrement(i)}>decrement</button>
+                  <button onClick={() => remove(i)}>remove</button>
+                </div>
+              );
+            })}
+            <button onClick={() => add()}>add</button>
+          </div>
+        );
       };
-
-
-
-function ListItem(props) {
- 
-  return <li style={{listStyleType:"none"}}>{props.value}</li>;
-}
-
-function DivList(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number,i) =>
-   
-    <ListItem key={i} value={number} />
-  );
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  );
-}
-
-const Add=()=>{
-   
-    numbers.push(<Component />);
-    console.log(numbers);
-    ReactDOM.render(
-  <div><DivList numbers={numbers} /><button onClick={Add}  style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></div>,
-  document.getElementById('root')
-);
-
-    };
-const numbers = [<Component />];
-ReactDOM.render(
-  <div><DivList numbers={numbers} /><button onClick={Add} style={{marginLeft:"90px",marginTop:"40px",color:"blue"}}>Add</button></div>,document.getElementById('root')
-);
-
-  </script>
+      ReactDOM.render(
+        <div>
+          <Counter />
+        </div>,
+        document.getElementById("root")
+      );
+    </script>
   </body>
 </html>
